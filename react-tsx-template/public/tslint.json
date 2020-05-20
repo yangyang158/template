@@ -1,0 +1,50 @@
+{
+    "extends": ["tslint:recommended", "tslint-eslint-rules", "tslint-react"],
+    "linterOptions": {
+        "exclude": [
+            "config/**/*.js",
+            "node_modules/**/*.ts"
+        ]
+    },
+    "rules": {
+        "ordered-imports": false,
+        "no-var-keyword": true,
+        "no-debugger":true,
+        "no-consecutive-blank-lines": [true, { "max": 1}],
+        "max-line-length": [true, 120],
+        "eqeqeq": ["warn", "always"],
+        "no-empty": true,
+        "no-eval": true,
+        "no-var-requires": true,
+        "noImplicitAny": false,
+        "member-access": false,
+        "member-ordering": false,
+        "no-trailing-whitespace": [
+            true,
+            "ignore-comments",
+            "ignore-jsdoc"
+        ],
+        "whitespace": [
+            true,
+            "check-branch",
+            "check-decl",
+            "check-operator",
+            "check-separator",
+            "check-type"
+        ],
+        "object-literal-sort-keys": false,
+        "comment-format": [
+            true,
+            "check-space"
+        ],
+        "no-multi-spaces": "error",
+        "no-sparse-arrays": "error",
+        "max-len": ["error", { "code": 120 }],
+        "block-spacing": "error",
+        "no-regex-spaces": "error",
+        "ter-arrow-spacing": "error",
+        "no-console": ["warn", "always"],
+        "semicolon": [true, "never"]
+    }
+}
+  
