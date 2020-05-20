@@ -10,6 +10,11 @@
     "start": "webpack-dev-server --config ./webpack-config/webpack.dev.js",
     "eslint":  "eslint ./src/**/*.{js,vue} --fix"
   },
+  "husky": {
+    "hooks": {
+      "precommit": "npm run eslint"
+    }
+  },
   "author": "",
   "license": "ISC",
   "devDependencies": {
