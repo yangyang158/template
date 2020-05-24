@@ -25,6 +25,9 @@ module.exports = {
                     name: '[hash:8].[ext]'
                 }
             }]
+        }, {
+            test: /\.(eot|svg|ttf|woff|woff2)(\?\S*)?$/,
+            loader: 'file-loader'
         }]
     },
     plugins: [
