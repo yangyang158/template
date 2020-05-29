@@ -9,23 +9,30 @@ export default {
     data(){
         return {
             showUrl: '',
-            index: 0
+            index: 0,
+            isPreview: false
         }
     },
     methods: {
         toPre() {
             if (this.index === 0) return
             this.index --
+            console.log('获取父组件的属性和方法', this.$parent)
         },
         toNext() {
             if (this.index === this.picsList.length - 1) return
             this.index ++ 
+        },
+        goPreview(index) {
+            this.index = index
+            this.isPreview = true
         }
     },
     watch: {
         index(val) {
-            console.log('监听index', val)
             this.showUrl = this.picsList[val].url
+            console.log('江亭')
+            this.$emit('renderCallback', this.showUrl)
         }
     },
     beforeCreated() {

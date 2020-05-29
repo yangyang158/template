@@ -4,8 +4,8 @@
             {{ test }}
         </div>
         <div class="photo" />
-        <img :src="imgUrl" width="40px">
-        <pic-wall :pics-list="picsList" />
+        <img :src="imgUrl" width="40px" @click="clickPhoto">
+        <pic-wall ref="picWall" :pics-list="picsList" @renderCallback="renderCallback" />
         <router-view />
     </div>
 </template>
@@ -30,6 +30,15 @@ export default {
                 title: '3', 
                 url: 'http://pic32.nipic.com/20130808/4416678_094717767000_2.jpg'
             }]
+        }
+    },
+    methods: {
+        renderCallback(params) {
+            console.log('params', params)
+        },
+        clickPhoto() {
+            console.log('子组件属性和方法1', this.$children)
+            console.log('子组件属性和方法2', this.$refs.picWall)
         }
     }
 }
