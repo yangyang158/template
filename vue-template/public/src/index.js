@@ -10,6 +10,7 @@ let app = document.createElement('div')
 app.setAttribute('id', 'app')
 document.body.appendChild(app)
 new Vue({
+    // 指定vue实例的挂载目标
     "el": '#app',
     router,
     store,

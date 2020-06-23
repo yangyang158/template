@@ -31,7 +31,7 @@ let devConfig = {
                         ident: 'postcss',
                         sourceMap: true,
                         plugins: [
-                            require('autoprefixer'),// 给css添加前缀
+                            require('autoprefixer')// 给css添加前缀
                         ]
                     } 
                 }
@@ -54,20 +54,20 @@ let devConfig = {
         progress: true,
         lazy: false,
         overlay: {// 出现错误 弹出错误信息页面
-			warnings: true,
-			errors: true
+            warnings: true,
+            errors: true
         },
         proxy: {
-			'/api/*': {
-				target: 'http://localhost:7309'
-			},
-			'/v3/*': {
-				target: 'https://restapi.amap.com/',
-				secure: true,  // 如果是https接口，需要配置这个参数
-				changeOrigin: true, // 如果接口跨域，需要进行这个参数配置
-			},
-		}
-    },
+            '/api/*': {
+                target: 'http://localhost:7309'
+            },
+            '/v3/*': {
+                target: 'https://restapi.amap.com/',
+                secure: true,  // 如果是https接口，需要配置这个参数
+                changeOrigin: true // 如果接口跨域，需要进行这个参数配置
+            }
+        }
+    }
 }
 
 module.exports = merge(base, devConfig)

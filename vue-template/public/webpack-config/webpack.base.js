@@ -9,6 +9,11 @@ module.exports = {
         path: path.resolve(__dirname, '../dest'),
         filename: 'index.js'
     },
+    resolve: {
+        alias: {
+            '@pages': path.resolve(__dirname, '../src/pages')
+        }
+    },
     module: {
         rules: [{
             test:/\.vue$/,
