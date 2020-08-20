@@ -11,7 +11,8 @@ module.exports = {
     },
     resolve: {
         alias: {
-            '@pages': path.resolve(__dirname, '../src/pages')
+            '@pages': path.resolve(__dirname, '../src/pages'),
+            '@assets': path.resolve(__dirname, '../src/assets')
         }
     },
     module: {
@@ -45,7 +46,7 @@ module.exports = {
             filename: 'index.html',
             template: 'index.ejs',
             inject: 'body',
-            favicon: path.join(__dirname, '../assets/img/favicon.ico')
+            favicon: path.join(__dirname, '../src/assets/img/favicon.ico')
             // minify: {"removeComments": true, "collapseWhitespace": true},//压缩
             // chunksSortMode: 'none',
             // banner: {

@@ -59,7 +59,8 @@ let devConfig = {
         },
         proxy: {
             '/api/*': {
-                target: 'http://localhost:7309'
+                target: 'http://localhost:6007',
+                pathRewrite: {'^/api' : ''}
             },
             '/v3/*': {
                 target: 'https://restapi.amap.com/',
