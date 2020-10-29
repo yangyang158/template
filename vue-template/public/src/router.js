@@ -1,19 +1,36 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-// import Home from '../compnonts/home/index.vue'
-// import Mine from '../compnonts/mine/index.vue'
+const Login = () => import(/* webpackChunkName: 'Login' */ '@pages/login/index.vue')
+import Main from '@pages/main-page/index.vue'
+const User = () => import(/* webpackChunkName: 'User' */ '@pages/main-page/system-mana/user/index.vue')
+const Role = () => import(/* webpackChunkName: 'Role' */ '@pages/main-page/system-mana/role/index.vue')
+
 Vue.use(Router)
 export default new Router({
     "routes":[
-        // {
-        //     path:'/',
-        //     name:'home',
-        //     component:Home
-        // },
-        // {
-        //     path:'/mine',
-        //     name:'mine',
-        //     component:Mine
-        // }
+        {
+            path: '/main',
+            name: 'Main',
+            component: Main,
+            children: [{
+                path: '/main/user',
+                name: 'User',
+                component: User
+            }, {
+                path: '/main/role',
+                name: 'Role',
+                component: Role
+            }],
+            redirect: { name: 'User' }
+        },
+        {
+            path: '/login',
+            name: 'Login',
+            component: Login
+        },
+        {
+            path: '/',
+            redirect: { name: 'Login' }
+        }
     ]
 })

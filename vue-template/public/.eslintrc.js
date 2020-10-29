@@ -33,7 +33,7 @@ module.exports = {
         'indent': [2, 4], // 缩进4
         'comma-dangle': 2, // 对象字面量项尾不能有逗号
         'new-cap': 2, // 函数名首行大写必须使用new方式调用，首行小写必须用不带new方式调用
-        'no-console': 2,// 禁止使用console
+        'no-console': 0,// 禁止使用console
         'no-extra-semi': 2, // 禁止多余的冒号
         'no-new': 0, // 禁止在使用new构造一个实例后不赋值
         'no-undef': 2, // 不能有未定义的变量

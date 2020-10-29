@@ -2,7 +2,12 @@
     <div class="pic-wall">
         <div class="img-lists">
             <div v-for="(img, index) in picsList" :key="index" class="item-img">
-                <img :src="img.url" width="100%" @click="goPreview(index)">
+                <img
+                    :src="img.url" 
+                    width="100%" 
+                    onerror="alert('The image could not be loaded.')"
+                    @click="goPreview(index)"
+                >
             </div>
         </div>
         <div v-if="isPreview" class="preview">
@@ -25,6 +30,10 @@
                 </div>
             </div>
         </div>
+        <hr>
+        <c v-bind="$attrs" v-on="$listeners" @getDData="getDData" />
+        <d />
+        <iframe height="600" width="800" src="http://172.19.102.129:8080/#/admin/common/project-group" />
     </div>
 </template>
 <style lang='less' scope>
